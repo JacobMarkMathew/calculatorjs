@@ -19,12 +19,38 @@ app.post("/Addition",(request,response)=>{
 )})
 
 app.post("/sub",(request,response)=>{
+
+    const getnumber1= parseInt(request.body.num1)
+    const getnumber2 = parseInt(request.body.num2)
+    const result=getnumber1 - getnumber2
     
     
     response.json(
-    {"status":"successs"}
+    {"result":result}
 )})
 
+app.post("/multi",(request,response)=>{
 
+    const getnumber1= parseInt(request.body.num1)
+    const getnumber2 = parseInt(request.body.num2)
+    const result=getnumber1 * getnumber2
+    
+    
+    response.json(
+        {"result":result}
+        )})
+
+
+        app.post("/division",(request,response)=>{
+
+            const getnumber1= parseInt(request.body.num1)
+            const getnumber2 = parseInt(request.body.num2)
+            const result=getnumber1 / getnumber2
+            
+            
+            response.json(
+                {"result":result}
+                )})
+        
 
 app.listen(4000,()=>{console.log("server running")})
